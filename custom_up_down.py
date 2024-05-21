@@ -9,8 +9,10 @@ import sys
 # To get started, open a terminal and type 'roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:=wx250'
 # Then change to this directory and type 'python bartender.py  # python3 bartender.py if using ROS Noetic'
 
+robot_model = "wx250"
+
 def main():
-    bot = InterbotixManipulatorXS("wx250", "arm", "gripper")
+    bot = InterbotixManipulatorXS(robot_model, "arm", "gripper")
 
     if (bot.arm.group_info.num_joints < 5):
         print('This demo requires the robot to have at least 5 joints!')
